@@ -1,0 +1,22 @@
+{
+  "id": "keystone-1",
+  "kind": "Pod",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "manifest": {
+      "version": "v1beta1",
+      "id": "keystone-1",
+      "containers": [{
+        "name": "master",
+        "image": "dockerfile/redis",
+        "ports": [{
+          "containerPort": 6379,
+          "hostPort": 6379
+        }]
+      }]
+    }
+  },
+  "labels": {
+    "name": "redis-master"
+  }
+}
