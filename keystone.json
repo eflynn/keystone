@@ -5,18 +5,17 @@
   "desiredState": {
     "manifest": {
       "version": "v1beta1",
-      "id": "keystone-1",
+      "id": "keystone",
       "containers": [{
-        "name": "master",
-        "image": "dockerfile/redis",
-        "ports": [{
-          "containerPort": 6379,
-          "hostPort": 6379
-        }]
+        "name": "keystone",
+        "image": "eflynn/keystone",
+        "env": [{"name": "KEYSTONE_DB_PASSWORD", "value": "pa55word"}],
+        "ports": [{"containerPort": 5000},
+                  {"containerPort": 35357}]
       }]
     }
   },
   "labels": {
-    "name": "redis-master"
+    "name": "keystone"
   }
 }
