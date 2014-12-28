@@ -3,7 +3,7 @@ FROM python:2.7.8
 RUN groupadd -r keystone && useradd -r -g keystone keystone
 
 RUN pip install mysql-python \
-    && pip install git+https://github.com/openstack/keystone.git@stable/icehouse
+    && pip install git+https://github.com/openstack/keystone.git@stable/juno
 
 COPY docker-entrypoint.sh /entrypoint.sh
 COPY etc /etc/keystone/

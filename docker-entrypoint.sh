@@ -21,4 +21,6 @@ sed -e "s/%DB_USER%/$KEYSTONE_DB_USER/g" \
     -e "s/%DB_HOST%/$MYSQL_SERVICE_HOST/g" \
     -i /etc/keystone/keystone.conf
 
+keystone-manage db_sync
+
 exec "$@"
